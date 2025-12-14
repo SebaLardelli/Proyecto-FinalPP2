@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Administración</title>
+  <link rel="icon" type="image/png" href="/calcomania-proyecto-final/public/Assets/Iconos/icono.png">
+  <link rel="stylesheet" href="/calcomania-proyecto-final/public/Admin/styleadmin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="admin-header">
+  <div class="header-content">
+    <h1>Panel de Administración</h1>
+    <button id="logout-btn" class="logout-button">
+      <ion-icon name="log-out-outline"></ion-icon>
+      Cerrar Sesión
+    </button>
+  </div>
+</header>
+
+
+<section>
+  <!-- PRODUCTOS  -->
+  <div class="admin-caja">
+    <h2>Gestionar Productos</h2>
+    
+    <!-- Formulario para agregar/actualizar producto -->
+    <form id="formulario-productos" class="admin-form" enctype="multipart/form-data">
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="albums-outline"></ion-icon></span>
+        <select id="id_categoria" required onchange="toggleFocus(this)">
+          <option value="">Seleccionar Categoría</option>
+        </select>
+      </div>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="color-palette-outline"></ion-icon></span>
+        <select id="id_tematica" onchange="toggleFocus(this)">
+          <option value="">Seleccionar Temática</option>
+        </select>
+      </div>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="pricetag-outline"></ion-icon></span>
+        <input id="nombre_p" type="text" required oninput="toggleFocus(this)">
+        <label>Nombre del Producto</label>
+      </div>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="resize-outline"></ion-icon></span>
+        <input id="tamanio" type="text" oninput="toggleFocus(this)">
+        <label>Tamaño</label>
+      </div>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="cube-outline"></ion-icon></span>
+        <input id="stock" type="number" min="0" required oninput="toggleFocus(this)">
+        <label>Stock</label>
+      </div>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="cash-outline"></ion-icon></span>
+        <input id="precio" type="number" step="0.01" min="0" required oninput="toggleFocus(this)">
+        <label>Precio</label>
+      </div>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="create-outline"></ion-icon></span>
+        <input id="descripcion_p" required oninput="toggleFocus(this)">
+        <label>Descripción</label>
+      </div>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="image-outline"></ion-icon></span>
+        <input id="imagen_producto" type="file" accept="image/*" onchange="handleImageUpload(this)">
+        <label>Seleccionar Imagen</label>
+      </div>
+
+
+      <!-- PREVIEW -->
+      <div class="imagen-preview" style="text-align: center; margin: 30px 0;">
+        <img id="preview-imagen" src="" alt="Vista previa" 
+             style="max-width: 200px; max-height: 200px; border-radius: 10px; display: none; 
+                    object-fit: cover; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      </div>
+
+      <button type="submit" id="boton-principal-producto">Crear Producto</button>
+    </form>
+  </div>
+
+  <div class="lista-productos">
+    <h2>Lista de Productos</h2>
+    <div class="tabla-contenedor">
+      <table>
+        <thead>
+        <tr>
+          <th>Nombre</th><th>Tamaño</th><th>Stock</th><th>Precio</th>
+          <th>Descripción</th><th>Imagen</th><th class="acciones">Acciones</th>
+        </tr>
+        </thead>
+        <tbody id="tabla-productos"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--  CATEGORÍAS  -->
+  <div class="admin-caja">
+    <form id="formulario-categorias">
+      <h2>Categorías</h2>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="folder-open-outline"></ion-icon></span>
+        <input id="nombre-categoria" type="text" required oninput="toggleFocus(this)">
+        <label>Nombre de la Categoría</label>
+      </div>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="create-outline"></ion-icon></span>
+        <input id="descripcion-categoria" type="text" required oninput="toggleFocus(this)">
+        <label>Descripción</label>
+      </div>
+
+      <button type="submit" id="boton-principal-categoria">Crear Categoría</button>
+    </form>
+  </div>
+
+  <div class="lista-productos">
+    <h2>Lista de Categorías</h2>
+    <div class="tabla-contenedor">
+      <table>
+        <thead>
+          <tr><th>Nombre</th><th>Descripción</th><th class="acciones">Acciones</th></tr>
+        </thead>
+        <tbody id="tabla-categorias"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--  TEMÁTICAS  -->
+  <div class="admin-caja">
+    <form id="formulario-tematicas">
+      <h2>Temáticas</h2>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="pricetag-outline"></ion-icon></span>
+        <input id="nombre-tematica" type="text" required oninput="toggleFocus(this)">
+        <label>Nombre de la Temática</label>
+      </div>
+
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="create-outline"></ion-icon></span>
+        <input id="descripcion-tematica" type="text" required oninput="toggleFocus(this)">
+        <label>Descripción</label>
+      </div>
+
+      <button type="submit" id="boton-principal-tematica">Crear Temática</button>
+    </form>
+  </div>
+
+  <div class="lista-productos">
+    <h2>Lista de Temáticas</h2>
+    <div class="tabla-contenedor">
+      <table>
+        <thead>
+          <tr><th>Nombre</th><th>Descripción</th><th class="acciones">Acciones</th></tr>
+        </thead>
+        <tbody id="tabla-tematicas"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--  MÉTODOS DE PAGO  -->
+  <div class="admin-caja">
+    <form id="formulario-metodos-pago">
+      <h2>Métodos de Pago</h2>
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="card-outline"></ion-icon></span>
+        <input id="descripcion-metodo-pago" type="text" required oninput="toggleFocus(this)">
+        <label>Descripción del Método</label>
+      </div>
+      <button type="submit" id="boton-principal-metodo-pago">Crear Método de Pago</button>
+    </form>
+  </div>
+
+  <div class="lista-productos">
+    <h2>Lista de Métodos de Pago</h2>
+    <div class="tabla-contenedor">
+      <table>
+        <thead><tr><th>Descripción</th><th class="acciones">Acciones</th></tr></thead>
+        <tbody id="tabla-metodos-pago"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--  PUNTO DE RETIRO  -->
+  <div class="admin-caja">
+    <form id="formulario-pos">
+      <h2>Punto de Retiro</h2>
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="storefront-outline"></ion-icon></span>
+        <input id="nombre-pos" type="text" required oninput="toggleFocus(this)">
+        <label>Nombre del Punto de Retiro</label>
+      </div>
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="location-outline"></ion-icon></span>
+        <input id="direccion-pos" type="text" required oninput="toggleFocus(this)">
+        <label>Dirección</label>
+      </div>
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="time-outline"></ion-icon></span>
+        <input id="horarios-pos" type="text" oninput="toggleFocus(this)">
+        <label>Horarios</label>
+      </div>
+      <div class="campo-entrada">
+        <span class="icono"><ion-icon name="mail-outline"></ion-icon></span>
+        <input id="codigo-postal-pos" type="text" oninput="toggleFocus(this)">
+        <label>Código Postal</label>
+      </div>
+      <button type="submit" id="boton-principal-pos">Crear Punto de Retiro</button>
+    </form>
+  </div>
+
+  <div class="lista-productos">
+    <h2>Lista de Puntos de Retiro</h2>
+    <div class="tabla-contenedor">
+      <table>
+        <thead><tr><th>Nombre</th><th>Dirección</th><th>Horarios</th><th>Código Postal</th><th class="acciones">Acciones</th></tr></thead>
+        <tbody id="tabla-pos"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+    <script type="module" src="/calcomania-proyecto-final/public/Admin/js/main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

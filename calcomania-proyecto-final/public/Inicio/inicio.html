@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcoMania</title>
+    <link rel="icon" href="/calcomania-proyecto-final/public/Assets/Iconos/icono.png">
+    <link rel="stylesheet" href="/calcomania-proyecto-final/public/Inicio/styleinicio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="navegador">
+        <header class="header">
+            <button class="abrir-menu" id="abrir-menu">
+                <i class="bi bi-list"></i>
+            </button>
+        </header>
+        
+        <aside> 
+            <div class="img-logo">
+                <img src="/calcomania-proyecto-final/public/Assets/Iconos/icono.png" alt="Logo CalcoMania" class="imagen-aside">
+            </div>
+            <button class="close-menu" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
+            
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <button id="todos" class="boton-menu boton-categoria active">
+                            <i class="bi bi-hand-index-thumb-fill"></i> Todos los productos
+                        </button>
+                    </li>
+                    
+                    <!-- Contenedor para categorías dinámicas -->
+                    <div class="categorias-container">
+                        <!-- Las categorías se cargarán aquí dinámicamente -->
+                    </div>
+                    
+                    <li>
+                        <a class="boton-menu boton-carrito" href="/calcomania-proyecto-final/public/Carrito" id="carrito-link">
+                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Se actualizará dinámicamente con JavaScript -->
+                        <a href="/calcomania-proyecto-final/public/Login" class="iniciar-sesion" id="login-link">Iniciar sesión</a>
+                    </li>
+                    
+                    <!-- Filtros por temática - después del login -->
+                    <div class="filtros-tematica-item">
+                        <label class="label-tematica">Filtrar por temática:</label>
+                        <select class="select-tematica" id="selector-tematica">
+                            <option value="">Seleccionar temática...</option>
+                        </select>
+                        <div class="tematicas-seleccionadas" id="tematicas-seleccionadas">
+                            <span class="tematicas-vacio">Ninguna temática seleccionada</span>
+                        </div>
+                    </div>
+                    
+                </ul>
+            </nav>
+            
+            <footer>
+                <div class="link">
+                    <p class="texto-footer">© CalcoMania</p>
+                    <a href="https://www.instagram.com/calcoomaniaa/" target="_blank" class="icon-instagram">
+                        <img src="/calcomania-proyecto-final/public/Assets/Iconos/instagram.png" alt="Instagram" style="width: 20px; height: 20px;"> 
+                        Instagram - CalcoMania
+                    </a>
+                </div>
+            </footer>
+        </aside>
+        
+        <main>
+            <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!-- Los productos se cargarán aquí dinámicamente -->
+            </div>
+        </main>
+    </div>
+    
+    <script type="module" src="/calcomania-proyecto-final/public/Inicio/js/main.js"></script>
+</body>
+</html>

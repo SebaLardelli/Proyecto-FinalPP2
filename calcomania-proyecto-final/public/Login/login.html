@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicia sesión en CalcoMania</title>
+    <link rel="icon" href="/calcomania-proyecto-final/public/Assets/Iconos/icono.png">
+    <link rel="stylesheet" href="/calcomania-proyecto-final/public/Login/stylelogin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <div class="login-box">
+            <form id="login-form" action="">
+                <h2>Iniciar sesión</h2>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input id="email" type="email" required oninput="toggleFocus(this)">
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input id="password" type="password" required oninput="toggleFocus(this)" onfocus="showPasswordToggle(true)" onblur="showPasswordToggle(false)">
+                    <span class="password-toggle" id="password-toggle" style="display: none;" onclick="togglePasswordVisibility()">
+                        <ion-icon id="eye-icon" name="eye-outline"></ion-icon>
+                        <ion-icon id="eye-off-icon" name="eye-off-outline" style="display: none;"></ion-icon>
+                    </span>
+                    <label>Contraseña</label>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input id="remember-me" type="checkbox"> Recordame</label>
+                    <a href="/calcomania-proyecto-final/public/Recuperacion">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button id="login-button" type="submit">Acceder</button>
+
+                <div class="register-link">
+                    <p>¿Aún no te has registrado? <a href="/calcomania-proyecto-final/public/Registro">Registrate aquí</a></p>
+                </div>            
+            </form>
+        </div>
+    </section>
+
+    <script type="module" src="/calcomania-proyecto-final/public/Login/js/main.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>
+
+

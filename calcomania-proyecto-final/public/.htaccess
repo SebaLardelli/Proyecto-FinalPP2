@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Desactivar DirectorySlash para evitar que Apache agregue barra final automáticamente
+DirectorySlash Off
+
+# Configurar DirectoryIndex para que Apache busque index.php en directorios
+DirectoryIndex index.php index.html
+
+# Si es un directorio y tiene index.php, servirlo directamente
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.php -f
+RewriteRule ^(.*)$ $1/index.php [L]
+
+# Redirigir a index.php solo si el archivo o carpeta NO existe
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]

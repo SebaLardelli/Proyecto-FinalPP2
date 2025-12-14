@@ -1,0 +1,215 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Sección */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('/calcomania-proyecto-final/Assets/Background/bg_login.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+/* Login */
+.login-box {
+    width: 100%;
+    max-width: 40%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px); 
+    border: 3px solid #fff;
+    border-radius: 30px;
+    padding: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Título */
+h2 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Texto informativo */
+.informativo {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Inputs OTP */
+.otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.otp-inputs input {
+    text-align: center;
+    width: 50px;
+    height: 70px;
+    font-size: 1.5rem;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+}
+
+/* Focus input OTP */
+.otp-inputs input:focus {
+    transition: 0.3s;
+    border-color:  #c329c1;
+    box-shadow: 0 0 5px  #c329c1;
+}
+
+/* Botón */
+button {
+    width: 70%;
+    height: 55px;
+    background-color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+
+button:hover {
+    transition: 0.5s;
+    background-color:  #c329c1;
+    color: #ffffff;
+}
+
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Link */
+.register-link {
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 15px;
+}
+
+
+.register-link a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+.register-link a:hover{
+    transition: 0.5s;
+    color: #c329c1;
+}
+
+/* Transiciones */
+form, .informativo, .login-box, h2, .input-box, button, .register-link p a, .remember-forgot a {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 1610px) {
+    section {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 1080px;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .otp-inputs {
+        align-items: center;
+        margin: 0 auto;
+        gap: 12px;
+    }
+    .otp-inputs input {
+        width: 45px;
+        height: 65px;
+        font-size: 1.3rem;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    .informativo {
+        font-size: 1rem;
+    }
+
+    form {
+        width: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    button {
+        max-width: 350px;
+        min-width: 300px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+
+    .register-link {
+        grid-column: 1 / -1; 
+        text-align: center;
+        margin-top: 20px; 
+    }
+
+    .register-link p {
+        font-size: 1rem;
+        word-wrap: break-word; 
+    }
+
+    .register-link a {
+        display: inline-block; 
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+

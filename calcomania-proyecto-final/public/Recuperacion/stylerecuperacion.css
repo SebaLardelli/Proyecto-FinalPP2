@@ -1,0 +1,249 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  /* Sección */
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('/calcomania-proyecto-final/Assets/Background/bg_login.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Login */
+  .login-box {
+    width: 100%;
+    max-width: 720px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #fff;
+    border-radius: 30px;
+    padding: 50px;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+  }
+  
+  /* Título */
+  h2 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Texto informativo */
+  .informativo {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  /* Formulario */
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  /* Input box */
+  .input-box {
+    position: relative;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Input */
+  .input-box input {
+    width: 100%;
+    height: 70px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    color: #fff;
+    padding-left: 40px;
+  }
+  
+  /* Label */
+  .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.3s ease;
+    padding: 0 10px;
+  }
+  
+  /* Label activo */
+  .input-box input:focus ~ label,
+  .input-box input.has-content ~ label,
+  .input-box input:not(:placeholder-shown) ~ label {
+    top: -5px;
+    font-size: 1.2rem;
+    color: #ddd;
+  }
+  
+  /* Icono */
+  .icon {
+    position: absolute;
+    left: 5px;
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  /* Botón */
+  button {
+    width: 80%;
+    height: 55px;
+    background-color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    margin: 30px auto 0;
+  }
+  
+  /* Hover botón */
+  button:hover {
+    transition: 0.5s;
+    background-color: #c329c1;
+    color: #ffffff;
+  }
+  
+  /* Botón deshabilitado */
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Link registro */
+  .register-link {
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 15px;
+  }
+  
+  /* Link */
+  .register-link a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  /* Hover link */
+  .register-link a:hover {
+    transition: 0.5s;
+    color: #c329c1;
+  }
+  
+  /* Transiciones */
+  form, .informativo, section, .login-box, h2, .input-box, button, .register-link p a, .remember-forgot a {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Autofill transparente */
+  .input-box input:-webkit-autofill,
+  .input-box input:-webkit-autofill:hover,
+  .input-box input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+    -webkit-text-fill-color: #fff !important;
+    transition: background-color 9999s ease-in-out 0s !important;
+  }
+  
+  /* Placeholder invisible */
+  .input-box input::placeholder { color: transparent; }
+  
+
+  /* Responsive */
+  @media (max-width: 1610px) {
+    section {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .login-box {
+      width: 100%;
+      min-height: 100vh;          /* ocupa toda la pantalla */
+      max-width: none;            /* sin límite de ancho */
+      border: none;
+      border-radius: 0;           /* sin esquinas redondeadas */
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.7); /* mantiene la transparencia */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;    /* centra el contenido dentro */
+      align-items: center;
+    }
+  
+    h2 { font-size: 2.5rem; }
+    .informativo { font-size: 1.05rem; }
+  
+    form {
+      width: 100%;
+      max-width: 600px;          /* opcional: limita el form adentro */
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+  
+    button {
+      width: 100%;
+      max-width: 400px;
+      height: 55px;
+      font-size: 1.3rem;
+      margin-top: 20px;
+    }
+  }
+  
+  /* Responsive móvil */
+  @media (max-width: 765px) {
+    section {
+      align-items: flex-start; 
+    }
+  
+    .login-box {
+      max-width: 100%;
+      width: 100%;
+      min-height: 100vh;       
+      padding: 24px;
+      border-radius: 0;          /* opcional: lo hace full screen */
+      box-sizing: border-box;
+    }
+  
+    h2 { font-size: 1.7rem; }
+    .informativo { font-size: 0.95rem; }
+  
+    .input-box input { height: 58px; font-size: 1.1rem; }
+    .input-box label { font-size: 1.1rem; }
+  
+    button { font-size: 1.2rem; height: 50px; }
+  }

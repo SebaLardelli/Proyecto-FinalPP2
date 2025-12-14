@@ -1,0 +1,817 @@
+/* Reset global: elimina márgenes y padding por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Reset de márgenes para elementos comunes */
+h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Elimina viñetas de listas */
+ul {
+  list-style-type: none;
+}
+
+/* Elimina subrayado de enlaces */
+a {
+  text-decoration: none;
+}
+
+/* Contenedor principal: grid de 2 columnas con fondo de imagen */
+.navegador {
+  background-image: url('../Assets/Background/bg_login.png');
+  background-size: cover;
+  background-position: calc(50% + 200px) calc(50% + 50px);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background-color: #000;
+  overflow-y: auto;
+  visibility: visible;
+}
+
+/* Barra lateral: sticky, sin scroll en pantallas grandes */
+aside {
+  padding: 2rem;
+  padding-right: 0;
+  color: #fff; 
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #000;
+  visibility: visible;
+  overflow: hidden;
+}
+
+/* Contenedor del logo centrado */
+.img-logo {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+/* Logo del aside: tamaño responsive */
+.imagen-aside {
+  width:250px; 
+  height: auto;
+  max-width: 100%; 
+  object-fit: contain; 
+}
+
+/* Menú principal: columna vertical */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  visibility: visible;
+}
+
+/* Contenedor de botones de categorías */
+.categorias-container {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+/* Botón de menú: estilo base transparente */
+.boton-menu {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  width: 100%;
+  visibility: visible;
+}
+
+/* Botón activo: fondo blanco con bordes redondeados */
+.boton-menu.active {
+  background-color: #fff;
+  color: #c329c1;
+  backdrop-filter: blur(5px);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  position: relative;    
+}
+
+/* Efecto decorativo superior del botón activo */
+.boton-menu.active::before {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 2rem;
+  bottom: 100%;
+  right: 0;
+  background-color: transparent;
+  border-bottom-right-radius: .5rem;
+  box-shadow: 0 1rem 0 #fff;
+}
+
+/* Efecto decorativo inferior del botón activo */
+.boton-menu.active::after {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 2rem;
+  top: 100%;
+  right: 0;
+  background-color: transparent;
+  border-top-right-radius: .5rem;
+  box-shadow: 0 -1rem 0 #fff;
+}
+
+/* Rota iconos de pulgar 90 grados */
+.boton-menu > i.bi-hand-index-thumb-fill,
+.boton-menu > i.bi-hand-index-thumb {
+  transform: rotateZ(90deg);
+}
+
+/* Botón del carrito con margen superior */
+.boton-carrito {
+  margin-top: 2rem;
+  display: block;
+  visibility: visible;
+}
+
+/* Badge numérico del carrito */
+.numerito {
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  color: #fff;
+  padding: .15rem .25rem;
+  border-radius: .25rem;
+  border: 2px solid #fff; 
+}
+
+/* Badge activo: color morado */
+.boton-carrito.active .numerito {
+  background-color: #c329c1;
+  color: #fff;
+}
+
+/* Efecto hover en badge del carrito */
+.boton-carrito:hover .numerito {
+  box-shadow: 0 0 10px #c329c1; 
+}
+
+/* Área principal: fondo semitransparente con borde blanco */
+main {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  margin: 1.5rem; 
+  padding: 1.5rem; 
+  margin-left: 0;
+  border-radius: 2rem;
+  border: 5px solid #fff;
+  display: flex; 
+  flex-direction: column;
+  align-items: stretch; 
+}
+
+/* Título principal de la página */
+.titulo-principal {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+/* Grid de productos: columnas automáticas de 180px */
+.contenedor-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px); 
+  gap: 12px;
+  margin: 0; 
+  padding: 0; 
+  width: 100%;
+  align-items: start;
+  justify-content: start;
+}
+
+/* Tarjeta de producto: tamaño fijo 180x300px */
+.producto {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid #fff;
+  border-radius: 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 180px; 
+  max-width: 180px;
+  min-height: 300px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* Imagen del producto: altura fija 120px */
+.producto-imagen {
+  width: 100%; 
+  height: 120px;
+  border-radius: 1rem 1rem 0 0;
+  object-fit: contain;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Detalles del producto: flex column con espacio entre elementos */
+.producto-detalles {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 12px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+/* Efecto hover en detalles del producto */
+.producto-detalles:hover{
+  background: #dddddd75;
+}
+
+/* Título del producto: texto centrado */
+.producto-titulo {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: normal;
+  text-align: center;
+}
+
+/* Botón agregar al carrito: fondo blanco, hover morado */
+.producto-agregar {
+  border: 0;
+  background-color: #fff;
+  color: #000;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: background-color 0.2s, color 0.2s;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* Hover del botón agregar: cambia a morado */
+.producto-agregar:hover {
+  background-color: #c329c1;
+  color: #fff;
+}
+
+/* Precio del producto: texto centrado */
+.producto-precio {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Selector de tamaño: dropdown blanco */
+.producto-tamano {
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  font-size: 11px; 
+  color: #000000;
+  background-color: #fff;
+  appearance: none;
+  cursor: pointer;
+  margin: 4px 0;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+/* Hover del selector de tamaño: borde morado */
+.producto-tamano:hover {
+  border-color: #c329c1;
+}
+
+/* Focus del selector: borde y texto morado */
+.producto-tamano:focus {
+  outline: none;
+  background-color: #fff;
+  color: #c329c1;
+  border-color: #c329c1;
+}
+
+/* Botón deshabilitado: fondo rojo cuando no hay stock */
+.producto-agregar:disabled {
+  background-color: #dc3545;
+  color: #fff;
+  cursor: not-allowed;
+  border-color: #dc3545;
+}
+
+/* Contenedor superior del producto: título y precio */
+.producto-contenido-superior {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex-grow: 0;
+  justify-content: center;
+}
+
+/* Área de información del producto: selectores y descripciones */
+.producto-info-area {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Texto "Contiene:" para packs */
+.texto-pack-contenido {
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.1;
+  white-space: normal;
+  color: #fff;
+  text-align: center;
+}
+
+/* Descripción del pack */
+.pack-descripcion {
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.1;
+  white-space: normal;
+  color: #fff;
+  text-align: center;
+}
+
+/* Texto "Seleccionar tamaño" */
+.texto-seleccionar-tamano {
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.1;
+  white-space: normal;
+  color: #fff;
+  text-align: center;
+}
+
+/* Badge rojo para productos sin stock */
+.badge-sin-stock {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 1rem;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  margin: 2px 0;
+  border: 2px solid #dc3545;
+}
+
+/* Producto sin stock: opacidad reducida */
+.sin-stock {
+  opacity: 0.7;
+}
+
+/* Opción sin stock en selector: fondo rojo claro */
+.opcion-sin-stock {
+  color: #dc3545 !important;
+  background-color: #f8d7da !important;
+}
+
+/* Contenedor de filtros de temática */
+.filtros-tematica-item {
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 20px;
+  display: block;
+  visibility: visible;
+}
+
+/* Label del selector de temática */
+.label-tematica {
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Selector dropdown de temáticas: fondo oscuro */
+.select-tematica {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+}
+
+/* Focus del selector: borde morado */
+.select-tematica:focus {
+  outline: none;
+  border-color: #c329c1;
+}
+
+/* Contenedor de etiquetas de temáticas seleccionadas */
+.tematicas-seleccionadas {
+  margin-top: 8px;
+  min-height: 20px;
+}
+
+/* Mensaje cuando no hay temáticas seleccionadas */
+.tematicas-vacio {
+  color: #888;
+  font-size: 11px;
+  font-style: italic;
+}
+
+/* Etiqueta de temática seleccionada: badge morado clickeable */
+.tematica-tag {
+  display: inline-block;
+  background-color: #c329c1;
+  color: #fff;
+  padding: 3px 8px;
+  margin: 2px;
+  border-radius: 12px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+/* Hover de etiqueta: cambia a rojo */
+.tematica-tag:hover {
+  background-color: #dc3545;
+}
+
+/* Agrega "×" al final de cada etiqueta */
+.tematica-tag::after {
+  content: " ×";
+  font-weight: bold;
+}
+
+/* Contenedor de usuario autenticado: nombre y botón logout */
+.usuario-autenticado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  font-size: 7px;
+  gap: 4px;
+}
+
+/* Botón de cerrar sesión: gradiente rojo */
+.btn-logout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff4757, #ff3742);
+  color: #fff;
+  border: 1px solid #ff4757;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(255, 71, 87, 0.3);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Ajustes responsive para usuario autenticado en pantallas medianas */
+@media (min-width: 1240px) and (max-width: 1900px) {
+  .usuario-autenticado {
+    font-size: 6px;
+    gap: 3px;
+  }
+  
+  .btn-logout {
+    font-size: 8px;
+    padding: 3px 6px;
+    border-radius: 6px;
+  }
+}
+
+/* Hover del botón logout: efecto de elevación */
+.btn-logout:hover {
+  background: linear-gradient(135deg, #ff3742, #ff2f3a);
+  border-color: #ff3742;
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Footer del aside: centrado con enlaces */
+footer {
+  display: flex;
+  justify-content: center; 
+  align-items: flex-end;
+  width: 90%;
+  height: auto;
+  margin-top: auto;
+}
+
+/* Contenedor de enlaces del footer */
+.link {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Texto del footer */
+.texto-footer {
+  height: auto;
+  margin-right: 10px; 
+  font-size: 1rem;
+}
+
+/* Enlace de Instagram */
+.icon-instagram {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Imagen del icono de Instagram */
+.icon-instagram img {
+  margin-right: 4px; 
+  width: 20px; 
+  height: 20px; 
+}
+
+/* Hover del enlace Instagram: color morado */
+.icon-instagram:hover {
+  color: #c329c1;
+  transition: 0.5s;
+}
+
+/* Enlace de iniciar sesión */
+.iniciar-sesion {
+  display: block; 
+  text-align: left; 
+  margin-left: 20px;
+  margin-top: 20px; 
+  font-size: 1.2rem; 
+  color: white; 
+  visibility: visible;
+}
+
+/* Hover del enlace iniciar sesión: color morado */
+.iniciar-sesion:hover {
+  transition: 0.5s;
+  color: #c329c1; 
+}
+
+/* Header móvil: oculto en desktop */
+.header {
+  display: none;
+}
+
+/* Botón cerrar menú móvil: oculto en desktop */
+.close-menu {
+  display: none;
+}
+
+/* Elementos deshabilitados: ocultos */
+.disabled {
+  display: none;
+}
+
+/* Botón abrir menú móvil: oculto en desktop */
+.abrir-menu {
+  display: none;
+}
+
+/* Estilos móviles: menú lateral deslizable */
+@media (max-width: 1240px) {
+  .header {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 20px;
+    z-index: 1000;
+  }
+  
+  .abrir-menu {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .close-menu {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  aside {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    z-index: 1001;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  aside.open {
+    left: 0;
+  }
+}
+
+/* Estados de carga y vacío: mensajes centrados */
+.loading,
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #fff;
+}
+
+/* Texto de estados de carga/vacío */
+.loading p,
+.empty-state p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+/* Icono de estado vacío */
+.empty-state i {
+  font-size: 4rem;
+  color: #666;
+}
+
+/* Ajustes responsive para pantallas medianas: productos más pequeños */
+@media (min-width: 650px) and (max-width: 1900px) {
+  /* Ajustar posición del background hacia la izquierda */
+  .navegador {
+    background-position: calc(50% + 150px) calc(50% + 50px);
+  }
+  .producto-agregar {
+    padding: .22rem .44rem;
+    font-size: .62rem;
+  }
+  
+  .producto-titulo {
+    font-size: .72rem;
+    line-height: 1.08;
+  }
+  
+  .producto-precio {
+    font-size: .62rem;
+  }
+  
+  .texto-pack-contenido,
+  .pack-descripcion,
+  .texto-seleccionar-tamano {
+    font-size: .62rem;
+  }
+  
+  .producto-tamano {
+    padding: .2rem .32rem;
+    font-size: .62rem;
+  }
+  
+  /* Hacer productos más pequeños en media resolución */
+  .contenedor-productos {
+    grid-template-columns: repeat(auto-fill, 140px);
+    gap: 8px;
+  }
+  
+  .producto {
+    width: 140px;
+    height: 240px;
+    min-height: 240px;
+  }
+  
+  .producto-imagen {
+    height: 90px;
+  }
+  
+  .producto-titulo {
+    font-size: .65rem;
+  }
+  
+  .producto-precio {
+    font-size: .55rem;
+  }
+  
+  .producto-agregar {
+    padding: .2rem .4rem;
+    font-size: .55rem;
+  }
+  
+  /* Ajustar foto del aside - un poco más grande */
+  .img-logo img {
+    max-width: 160px;
+    max-height: 115px;
+  }
+  
+  /* Reducir carrito */
+  .boton-carrito {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  
+  /* Reducir iniciar sesión y alinear con filtros */
+  .iniciar-sesion {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+    margin-left: 0;
+  }
+  
+  /* Reducir filtros de temática */
+  .filtros-tematica-item {
+    margin: 5px 0;
+    padding: 0 15px;
+  }
+  
+  .label-tematica {
+    font-size: 10px;
+    margin-bottom: 3px;
+  }
+  
+  .select-tematica {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+  
+  .tematicas-vacio {
+    font-size: 9px;
+  }
+  
+  /* Reducir botón de debug */
+  .filtros-tematica-item button {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  
+  /* Reducir un poco los botones de categoría */
+  .boton-categoria {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  
+  .boton-menu i {
+    font-size: 0.8rem;
+  }
+  
+  .boton-categoria i {
+    font-size: 0.8rem;
+  }
+  
+  /* Forzar que "Todos los productos" entre en una línea */
+  #todos .boton-menu {
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+  
+  /* Footer en una línea y más pequeño */
+  footer {
+    padding: 5px 0;
+    font-size: 0.6rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .texto-footer {
+    font-size: 0.6rem;
+    margin: 0;
+  }
+  
+  .icon-instagram {
+    font-size: 0.6rem;
+  }
+}

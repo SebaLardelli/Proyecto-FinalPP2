@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recuperar Contraseña - CalcoMania</title>
+  <link rel="icon" href="/calcomania-proyecto-final/public/Assets/Iconos/icono.png">
+  <link rel="stylesheet" href="/calcomania-proyecto-final/public/Recuperacion/stylerecuperacion.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section>
+    <div class="login-box">
+      <h2>Recuperar Contraseña</h2>
+      <p class="informativo">
+        Ingresa tu correo electrónico y recibirás un código de verificación para recuperar tu
+        contraseña. Revisa también la bandeja de spam.
+      </p>
+
+      <!-- IMPORTANTE: id="otp-form" -->
+      <form id="otp-form" autocomplete="on" novalidate>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+          <input id="email-input"
+                 name="email"
+                 type="email"
+                 placeholder=" "
+                 autocomplete="email"
+                 autocapitalize="none"
+                 spellcheck="false"
+                 required />
+          <label>Ingresa tu correo</label>
+        </div>
+        <button type="submit">Recibir Código</button>
+      </form>
+      
+      <div class="register-link">
+        <p><a href="/calcomania-proyecto-final/public/Login">← Volver al Login</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="/calcomania-proyecto-final/public/Recuperacion/js/main.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+/* Reset */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Icono */
+.icon{
+    border-radius: 140%;
+}
+
+/* Sección */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/calcomania-proyecto-final/Assets/Background/bg_login.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Autofill transparente */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff; 
+}
+
+/* Login */
+.login-box {
+    max-width: 40%; 
+    min-width: 600px; 
+    
+    min-height: 600px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border: 3px solid #fff; 
+    border-radius: 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); 
+    padding: 40px; 
+    box-sizing: border-box;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Input email */
+.input-box input#email{
+    width: 100%;      
+    padding-left: 32px;
+    padding-right: 5px;   
+  }
+
+/* Título */
+h2 {
+    font-size: 3em;
+    color: #fff;
+    text-align: center;
+}
+
+/* Links */
+.register-link p a,
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700px; 
+    word-wrap: break-word; 
+}
+
+/* Input box */
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 40px 0;
+    border-bottom: 3px solid #fff; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Toggle password */
+.input-box .password-toggle {
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fff;
+    font-size: 2rem; 
+    display: none;
+}
+
+/* Icono input */
+.input-box .icon {
+    color: #ffffff;
+    font-size: 2rem; 
+}
+
+/* Label */
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 20px; 
+    transform: translateY(-50%);
+    font-size: 1.5rem; 
+    color: #fff;
+    pointer-events: none;
+    transition: 0.3s ease;
+    padding: 0 10px;
+}
+
+/* Label activo */
+.input-box input:focus ~ label,
+.input-box input.has-content ~ label {
+    top: -15px;
+    font-size: 1.2em;
+    color: #ddd;
+}
+
+/* Icono activo */
+.input-box input:focus + .icon,
+.input-box input.has-content + .icon {
+    color: #ddd;
+}
+
+/* Input */
+.input-box input {
+    width: calc(100% - 50px); 
+    height: 60px; 
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.5em; 
+    color: #fff;
+    padding: 0 45px 0 28px; 
+}
+
+/* Icono posición */
+.input-box .icon {
+    position: absolute;
+    left: -5px; 
+    top: 55%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 2rem; 
+    line-height: 60px; 
+}
+
+/* Remember forgot */
+.remember-forgot {
+    margin: -20px 0 30px; 
+    font-size: 1.2rem; 
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.remember-forgot label {
+    display: flex;
+    align-items: center;
+}
+
+.remember-forgot label input {
+    margin-right: 10px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    transition: 0.5s;
+    color: #c329c1;
+}
+
+/* Botón */
+button {
+    width: 100%; 
+    height: 55px; 
+    background-color: #fff;
+    border: none;
+    border-radius: 40px; 
+    cursor: pointer;
+    font-size: 1.5rem; 
+    color: #000;
+    font-weight: bold;
+}
+
+button:hover {
+    transition: 0.5s;
+    background-color:  #c329c1;
+    color: #ffffff;
+}
+
+/* Link registro */
+.register-link {
+    font-size: 1rem; 
+    color: #fff;
+    text-align: center;
+    margin: 40px 0 15px;
+}
+
+/* Texto registro */
+.register-link p {
+    display: inline;
+    color: #fff;
+}
+
+/* Link registro */
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Hover link registro */
+.register-link p a:hover{
+    transition: 0.5s;
+    color: #c329c1;
+}
+
+/* Iconos eye */
+#eye-icon, #eye-off-icon {
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em; 
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Transiciones */
+section, .login-box, h2, .input-box, button, .register-link p a, .remember-forgot a {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 1610px) {
+    section {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center; 
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 1080px;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 2.2rem; 
+    }
+
+    button {
+        height: 55px; 
+        font-size: 1.3rem; 
+    }
+
+    .register-link p a,
+    .remember-forgot a {
+        font-size: 1rem; 
+    }
+}

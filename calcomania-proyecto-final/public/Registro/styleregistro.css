@@ -1,0 +1,264 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Sección */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; 
+    background-image: url('/calcomania-proyecto-final/Assets/Background/bg_login.png');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    overflow: hidden; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Login */
+.login-box {
+    width: 100%;
+    max-width: 40%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #fff;
+    border-radius: 30px;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+/* Título */
+h2 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Formulario */
+form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px; 
+}
+
+/* Input box */
+.input-box {
+    position: relative;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+    display: flex;
+    align-items: center;
+}
+
+/* Input */
+.input-box input {
+    width: 100%;
+    height: 70px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+/* Label */
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.3s ease;
+    padding: 0 10px;
+}
+
+/* Label activo */
+.input-box input:focus ~ label,
+.input-box input.has-content ~ label {
+    top: -5px;
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+/* Icono */
+.icon {
+    position: absolute;
+    left: 5px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Input padding */
+.input-box input {
+    padding-left: 40px;
+}
+
+/* Label posición */
+.input-box label {
+    left: 40px;
+}
+
+/* Botón */
+button {
+    grid-column: span 2;
+    border-left-width: 15%;
+    border-right-width: 15%;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    background-color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    margin-top: 30px;
+    margin: 0 auto;
+    max-width: 800px; 
+}
+
+/* Hover botón */
+button:hover {
+    transition: 0.9s;
+    background-color:  #c329c1;
+    color: #ffffff;
+}
+
+/* Link registro */
+.register-link {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 15px;
+}
+
+/* Link */
+.register-link a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Hover link */
+.register-link a:hover{
+    color: #c329c1;
+}
+
+/* Toggle password */
+.input-box .password-toggle {
+    position: absolute;
+    right: 15px; 
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fff;
+    font-size: 2rem; 
+    display: none;
+}
+
+/* Iconos eye */
+#eye-icon, #eye-off-icon {
+    position: relative;
+    right: 15px; 
+    top: 60%;
+    transform: translateY(-50%);
+    font-size: 1.3rem; 
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Transiciones */
+form, section, .login-box, h2, .input-box, button, .register-link p a, .remember-forgot a {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width:  1610px) { 
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        min-height: 100vh; 
+    }
+
+    .login-box {
+        max-width: 1080px;
+        height: auto;
+        border: none;
+        border-radius: 0;
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    button {
+        height: 55px;
+        font-size: 1.3rem;
+    }
+
+    .register-link p a,
+    .remember-forgot a {
+        font-size: 1rem;
+    }
+
+    button,
+    .register-link {
+        grid-column: span 1;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .login-box {
+      width: 100%;    
+      max-width: none;   
+      border-radius: 0;   
+      padding: 20px;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .input-box input {
+      height: 50px;
+      font-size: 1.2rem;
+    }
+  
+    button {
+      height: 50px;
+      font-size: 1.3rem;
+    }
+
+    .remember-forgot, .register-link {
+        width: 100%;
+        font-size: 1rem;
+      }
+  
+      .remember-forgot a, .register-link p a {
+        font-size: 1rem;
+      }
+  }
+

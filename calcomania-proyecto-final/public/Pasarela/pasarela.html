@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela de Pago - CalcoMania</title>
+    <link rel="icon" href="/calcomania-proyecto-final/public/Assets/Iconos/icono.png">
+    <link rel="stylesheet" href="/calcomania-proyecto-final/public/Pasarela/stylepasarela.css">
+</head>
+<body>
+    <div class="pasarela-box">
+        <form id="pasarela-form">
+            <h2>Pasarela de Pago</h2>
+            
+            <!-- Resumen de productos -->
+            <div class="resumen-section">
+                <h3>Resumen de Compra</h3>
+                <div id="resumen-productos"></div>
+            </div>
+
+            <!-- Punto de retiro -->
+            <div class="punto-retiro-section">
+                <h3>Punto de retiro</h3>
+                <div id="puntos-retiro-container"></div>
+            </div>
+
+            <!-- Métodos de pago -->
+            <div class="metodos-pago-section">
+                <h3>Métodos de pago</h3>
+                <div class="metodos-pago-info">
+                    Puedes seleccionar hasta 2 métodos de pago
+                </div>
+                <div id="metodos-pago-container"></div>
+            </div>
+
+            <!-- Distribución de pagos -->
+            <div id="distribucion-pagos"></div>
+
+            <!-- Botones -->
+            <div class="botones-section">
+                <button type="button" id="volver-carrito" class="btn-volver">Volver al Carrito</button>
+                <button type="submit" id="realizar-pago" class="btn-pagar">Realizar Pago</button>
+            </div>
+        </form>
+    </div>
+
+    <script type="module" src="/calcomania-proyecto-final/public/Pasarela/js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate en CalcoMania</title>
+    <link rel="icon" href="/calcomania-proyecto-final/public/Assets/Iconos/icono.png">
+    <link rel="stylesheet" href="/calcomania-proyecto-final/public/Registro/styleregistro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <div class="login-box">
+            <h2>Registro</h2>
+            <form id="registro-form">
+                <!-- Nombre -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input id="nombre" type="text" required oninput="toggleFocus(this)" autocomplete="given-name"/>
+                    <label>Nombre</label>
+                </div>
+
+                <!-- Apellido -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input id="apellido" type="text" required oninput="toggleFocus(this)" autocomplete="family-name"/>
+                    <label>Apellido</label>
+                </div>
+
+                <!-- Email -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input id="email" type="email" required oninput="toggleFocus(this)" autocomplete="email" spellcheck="false"/>
+                    <label>Email</label>
+                </div>
+
+                <!-- Contraseña -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input id="password" type="password" required minlength="6" oninput="showPasswordToggle(this)" autocomplete="new-password"/>
+                    <span class="password-toggle" onclick="togglePasswordVisibility('password')">
+                        <ion-icon id="password-eye" name="eye-outline"></ion-icon>
+                        <ion-icon id="password-eye-off" name="eye-off-outline" style="display:none;"></ion-icon>
+                    </span>
+                    <label>Contraseña</label>
+                </div>
+
+                <!-- Confirmar Contraseña -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input id="confirmar_password" type="password" required minlength="6" oninput="showPasswordToggle(this)" autocomplete="new-password"/>
+                    <span class="password-toggle" onclick="togglePasswordVisibility('confirmar_password')">
+                        <ion-icon id="confirmar_password-eye" name="eye-outline"></ion-icon>
+                        <ion-icon id="confirmar_password-eye-off" name="eye-off-outline" style="display:none;"></ion-icon>
+                    </span>
+                    <label>Confirmar Contraseña</label>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                    <input id="telefono" type="tel" required oninput="toggleFocus(this)" autocomplete="tel"/>
+                    <label>Teléfono</label>
+                </div>
+
+                <!-- Dirección -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+                    <input id="direccion" type="text" required oninput="toggleFocus(this)" autocomplete="street-address"/>
+                    <label>Dirección</label>
+                </div>
+
+                <!-- Localidad -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+                    <input id="localidad" type="text" required oninput="toggleFocus(this)"/>
+                    <label>Localidad</label>
+                </div>
+
+                <!-- Código Postal -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="navigate-outline"></ion-icon></span>
+                    <input id="codigo_postal" type="text" required oninput="toggleFocus(this)" inputmode="numeric" autocomplete="postal-code"/>
+                    <label>Código Postal</label>
+                </div>
+
+                <!-- Botón -->
+                <button id="registro-button" type="submit">Registrarse</button>
+
+                <div class="register-link">
+                    <p>¿Ya tienes cuenta? <a href="/calcomania-proyecto-final/public/Login">Inicia sesión aquí</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script type="module" src="/calcomania-proyecto-final/public/Registro/js/main.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+

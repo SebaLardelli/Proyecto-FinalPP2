@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificar Código - CalcoMania</title>
+  <link rel="icon" href="/calcomania-proyecto-final/public/Assets/Iconos/icono.png">
+  <link rel="stylesheet" href="/calcomania-proyecto-final/public/Codigo/stylecodigo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section>
+    <div class="login-box">
+      <h2>Verificación</h2>
+      <p class="informativo">Ingresa el código de 6 dígitos enviado a tu correo electrónico.</p>
+
+      <form id="form">
+        <div class="otp-inputs">
+          <input id="otp1" type="text" maxlength="1" oninput="moveToNext(this, 'otp2')">
+          <input id="otp2" type="text" maxlength="1" oninput="moveToNext(this, 'otp3')">
+          <input id="otp3" type="text" maxlength="1" oninput="moveToNext(this, 'otp4')">
+          <input id="otp4" type="text" maxlength="1" oninput="moveToNext(this, 'otp5')">
+          <input id="otp5" type="text" maxlength="1" oninput="moveToNext(this, 'otp6')">
+          <input id="otp6" type="text" maxlength="1">
+        </div>
+        <button type="submit">Verificar</button>
+      </form>
+      
+      <div class="register-link">
+        <p><a href="#" onclick="reenviarCodigo()">¿No recibiste el código? Reenviar</a></p>
+        <p><a href="/calcomania-proyecto-final/public/Login">← Volver al Login</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="/calcomania-proyecto-final/public/Codigo/js/main.js"></script>
+</body>
+</html>

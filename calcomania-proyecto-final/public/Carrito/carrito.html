@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Calcomanías</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/calcomania-proyecto-final/public/Carrito/stylecarrito.css">
+    <link rel="icon" href="/calcomania-proyecto-final/public/Assets/Iconos/icono.png">
+</head>
+<body>
+    <div class="navegador">
+        <aside> 
+            <div class="img-logo">
+                <img src="/calcomania-proyecto-final/public/Assets/Iconos/icono.png" alt="Logo CalcoMania" class="imagen-aside">
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="boton-menu boton-categoria" href="/calcomania-proyecto-final/public/Inicio">
+                            <i class="bi bi-shop"></i> Seguir Comprando
+                        </a>
+                    </li>
+                    <li>
+                        <a class="boton-menu boton-categoria active" href="#">
+                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <div class="link">
+                    <p class="texto-footer">© CalcoMania</p>
+                    <a href="https://www.instagram.com/calcoomaniaa/" target="_blank" class="icon-instagram">
+                        <img src="/calcomania-proyecto-final/public/Assets/Iconos/instagram.png" alt="Instagram" style="width: 20px; height: 20px;"> 
+                        Instagram - CalcoMania
+                    </a>
+                </div>
+            </footer>
+        </aside>
+        <main>
+            <h1 class="titulo-principal">Carrito de Compras</h1>
+            
+            <!-- Carrito vacío -->
+            <div id="carrito-vacio" class="carrito-vacio">
+                <i class="bi bi-cart-x"></i>
+                <h3>Tu carrito está vacío</h3>
+                <p>Agrega algunos productos para comenzar tu compra</p>
+            </div>
+
+            <!-- Carrito con productos -->
+            <div id="carrito-contenido" class="carrito-contenido" style="display: none;">
+                <div class="contenedor-carrito-productos">
+                    <div class="lista-productos" id="lista-productos">
+                        <!-- Productos del carrito se cargarán aquí -->
+                    </div>
+                </div>
+                <div class="carrito-acciones">
+                    <div class="carrito-acciones-izquierda">
+                        <button id="vaciar-carrito" class="boton-vaciar">Vaciar Carrito</button>
+                    </div>
+                    <div class="carrito-comprar">
+                        <p class="texto-total">Total:</p>
+                        <p id="total" class="total">$0.00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botón de pago al final del main -->
+            <div class="carrito-boton-pagar" id="boton-pago-container">
+                <button type="button" id="proceder-pago" class="boton-pagar" onclick="procesarCompra(event)">💰 Proceder al Pago</button>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/calcomania-proyecto-final/public/Carrito/js/main.js"></script>
+</body>
+</html>

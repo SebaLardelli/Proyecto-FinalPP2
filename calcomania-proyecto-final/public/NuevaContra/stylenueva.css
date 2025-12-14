@@ -1,0 +1,180 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  /* Sección */
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('/calcomania-proyecto-final/Assets/Background/bg_login.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Login */
+  .login-box {
+    width: 100%;
+    max-width: 660px; 
+    min-width: 320px; 
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #fff;
+    border-radius: 30px;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+  }
+  
+  /* Título */
+  h2 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Formulario */
+  form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  /* Input box */
+  .input-box {
+    position: relative;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Input */
+  .input-box input {
+    width: 100%;
+    height: 70px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    color: #fff;
+    padding-left: 40px;
+    padding-right: 48px; 
+  }
+  
+  /* Label */
+  .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.3s ease;
+    padding: 0 10px;
+  }
+  
+  /* Label activo */
+  .input-box input:focus ~ label,
+  .input-box input.has-content ~ label {
+    top: -5px;
+    font-size: 1.2rem;
+    color: #ddd;
+  }
+  
+  /* Icono */
+  .icon {
+    position: absolute;
+    left: 5px;
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  /* Toggle password */
+  .password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.9;
+    visibility: hidden;
+  }
+  
+  /* Eye oculto */
+  .password-toggle .eye-off { display: none; }
+  
+  /* Toggle visible */
+  .input-box input:focus ~ .password-toggle,
+  .input-box input.has-content ~ .password-toggle {
+    visibility: visible;
+  }
+  
+  /* Botón */
+  button {
+    grid-column: span 1;
+    width: 100%;
+    height: 55px;
+    background-color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+  
+  /* Hover botón */
+  button:hover {
+    transition: 0.9s;
+    background-color: #c329c1;
+    color: #ffffff;
+  }
+  
+  /* Botón deshabilitado */
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Link registro */
+  .register-link {
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 15px;
+  }
+  
+  /* Link */
+  .register-link a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  /* Hover link */
+  .register-link a:hover {
+    color: #c329c1;
+  }
+  

@@ -1,0 +1,6 @@
+.env
+/vendor/
+/public/Uploads/ImagenProducto/*
+!public/Uploads/ImagenProducto/.gitkeep
+*.log
+

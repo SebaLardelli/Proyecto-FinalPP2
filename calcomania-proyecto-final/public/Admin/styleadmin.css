@@ -1,0 +1,397 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+.admin-header {
+  background: rgba(0, 0, 0, 0.98);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 0;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+
+.header-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.admin-header h1 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  flex-shrink: 0;
+}
+
+/* Botón cerrar sesión */
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: linear-gradient(135deg, #ff4757, #ff3742);
+  color: #fff;
+  border: 1px solid #ff4757;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: auto;
+  flex-shrink: 0;
+  max-width: 90px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+  text-align: center;
+}
+
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #ff3742, #ff2f3a);
+  border-color: #ff3742;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.5);
+}
+
+/* Fondo fijo */
+section::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background-image:url('../Assets/Background/bg_login.png');
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+/* Sección principal */
+section{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  width:100%;
+  min-height:100vh;
+  padding:40px 0;
+  background:transparent;
+  overflow:visible;
+  margin-top:0;
+  gap:20px;
+}
+
+/* Tarjetas admin */
+.admin-caja{
+  width:100%;
+  max-width:700px;
+  min-width:320px;
+  background-color:rgba(0,0,0,0.7);
+  border:2px solid rgba(255,255,255,0.7);
+  border-radius:30px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  backdrop-filter:blur(5px);
+  padding:40px;
+  margin-bottom:40px;
+  transition:all .3s ease;
+}
+
+/* Ajuste espaciado */
+.admin-caja {
+  margin-top: -35px;
+  padding-top: 75px;
+}
+
+/* Primera tarjeta */
+.admin-caja:first-of-type {
+  margin-top: -45px;
+  padding-top: 85px;
+}
+
+/* Títulos */
+h2{
+  font-size:3rem;
+  color:#fff;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* Campo entrada */
+.campo-entrada{
+  position:relative;
+  width:100%;
+  margin-bottom:25px;
+  border-bottom:2px solid rgba(255,255,255,0.7);
+  display:flex;
+  align-items:center;
+  min-height:56px;
+}
+
+/* Icono campo */
+.campo-entrada .icono{
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#fff;
+  font-size:1.8rem;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+}
+
+/* Label flotante */
+.campo-entrada label{
+  position:absolute;
+  top:50%;
+  left:48px;
+  transform:translateY(-50%);
+  font-size:1rem;
+  color:#fff;
+  pointer-events:none;
+  transition:0.3s ease;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  height:24px;
+}
+
+/* Label activo */
+.campo-entrada input:focus ~ label,
+.campo-entrada input.has-content ~ label,
+.campo-entrada select:focus ~ label,
+.campo-entrada select.has-content ~ label {
+  top:-10px;
+  font-size:0.95rem;
+  color:#ffffff;
+}
+
+/* Inputs */
+.campo-entrada input{
+  width:100%;
+  height:56px;
+  background:transparent;
+  border:none;
+  outline:none;
+  font-size:1.1rem;
+  color:#fff;
+  padding:0 45px 0 40px;
+}
+
+
+/* Select */
+.campo-entrada select{
+  width:100% !important;
+  height:56px !important;
+  background:transparent !important;
+  border:none !important;
+  outline:none !important;
+  font-size:1.1rem !important;
+  color:#fff !important;
+  padding:0 45px 0 40px !important;
+  appearance:none;
+  line-height:56px !important;
+}
+
+/* Opciones select */
+.campo-entrada select option{
+  background:#2c2c2c;
+  color:#fff;
+  padding:12px 16px;
+  border:none;
+  font-size:1rem;
+}
+
+/* Opción seleccionada */
+.campo-entrada select option:checked{
+  background:#c329c1;
+  color:#fff;
+  font-weight:600;
+}
+
+/* Label select */
+.campo-entrada select + label{
+  top:-10px;
+  transform:none;
+  font-size:0.95rem;
+}
+
+/* Input file */
+.campo-entrada input[type="file"]{
+  color:transparent;
+  background:transparent;
+  border:none;
+  outline:none;
+  width:100%;
+  height:56px;
+  font-size:1.1rem;
+  padding:12px 45px 0 40px;
+  cursor:pointer;
+  position:relative;
+  z-index:1;
+}
+
+/* Oculta botón file nativo */
+.campo-entrada input[type="file"]::file-selector-button{
+  display:none;
+}
+
+/* Oculta botón file webkit */
+.campo-entrada input[type="file"]::-webkit-file-upload-button{
+  display:none;
+}
+
+/* Input file con contenido */
+.campo-entrada input[type="file"].has-content{
+  padding:12px 45px 0 40px;
+}
+
+/* Botones */
+button{
+  width:100%;
+  height:55px;
+  background-color:#fff;
+  border:none;
+  border-radius:40px;
+  cursor:pointer;
+  font-size:1.5rem;
+  color:#000;
+  font-weight:bold;
+  margin-top:15px;
+  transition:all 0.3s ease;
+}
+
+/* Hover botón */
+button:hover{
+  background-color:#c329c1;
+  color:#ffffff;
+}
+
+/* Lista productos */
+.lista-productos{
+  margin-top:20px;
+  padding-top:50px;
+  margin-bottom:40px;
+  width:80%;
+  padding:20px;
+  backdrop-filter:blur(5px);
+  background-color:rgba(0,0,0,0.7);
+  border-radius:30px;
+  border:2px solid rgba(255,255,255,0.7);
+  box-sizing:border-box;
+}
+
+/* Título lista */
+.lista-productos h2{
+  text-align:center;
+  color:#ffffff;
+  margin-bottom:20px;
+}
+
+/* Tabla */
+.lista-productos table{
+  width:100%;
+  border-collapse:collapse;
+  color:#ffffff;
+  overflow-x:auto;
+}
+
+/* Celdas */
+.lista-productos th,
+.lista-productos td{
+  padding:15px 12px;
+  border-bottom:2px solid rgba(255,255,255,0.7);
+  font-size:16px;
+  text-align:center;
+  vertical-align:middle;
+  min-height:50px;
+}
+
+/* Encabezados */
+.lista-productos th{ 
+  background:#c329c1; 
+  color:#ffffff; 
+}
+
+/* Fila hover */
+.lista-productos tr:hover{ 
+  background:#dddddd75; 
+}
+
+/* Imágenes */
+.lista-productos td img{
+  max-width:150px;
+  max-height:150px;
+  border-radius:6px;
+  object-fit:cover;
+}
+
+/* Botones tabla */
+.lista-productos button{
+  width:auto !important;
+  min-width:80px;
+  height:35px;
+  font-size:0.9rem;
+  padding:0 15px;
+  margin:2px 4px;
+  border-radius:20px;
+  background-color:#fff !important;
+  color:#333 !important;
+  border:1px solid #ddd !important;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  display:inline-block;
+}
+
+/* Hover botones tabla */
+.lista-productos button:hover{
+  background-color:#c329c1;
+  color:#ffffff;
+  border-color:#c329c1;
+  transform:translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section {
+    padding: 10px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .admin-header h1 {
+    font-size: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .lista-productos {
+    width: 95%;
+  }
+}
